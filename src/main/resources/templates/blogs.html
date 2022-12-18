@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="layouts/defaultTemplate">
+
+<body>
+	<div layout:fragment="content">
+		<div class="container">
+			<div th:if="${blogList != null}" class="row">
+				<div th:each="blog : ${blogList}" class="col-12 col-md-6 col-lg-4 mb-4">
+					<div class="card-deck h-100">
+							<div class="card h-100 border-primary" style="width: 100%;">
+								<div class="card-body text-dark">
+									<h5 class="card-title">
+										<h5 th:text="${blog.authorName}"></h5>
+									</h5>
+									<p class="card-text" style="text-align: left;">
+										<th:block th:text="${blog.title}" />
+									</p>
+									<p class="card-text" style="text-align: left;">
+										<th:block th:text="${blog.introduction}" />
+									</p>
+									<p class="card-text" style="text-align: left;">
+										<th:block th:text="${blog.body}" />
+									</p>
+									<p class="card-text" style="text-align: left;">
+										<th:block th:text="${blog.conclusion}" />
+									</p>
+								</div>
+								<div class="card-footer text-center border-dark">
+									<div class="form-inline, justify-content-center">
+										<!--<input type="" name="id" value="7">-->
+										<form th:action="@{displayBlog/{id} (id=${blog.id})}" th:object="${blog}" method="GET">
+											<input class="btn btn-sm btn-primary my-1" style="width: 150px;" type="submit"
+											value="Details">
+										</form>
+									</div>
+									<div class="form-inline, justify-content-center">
+										<form th:action="@{updateBlog/{id} (id=${blog.id})}" th:object="${blog}" method="POST">
+											<input class="btn btn-sm btn-primary my-1" style="width: 150px;" type="submit"
+											value="Edit/Update">
+										</form>
+									</div>								
+									<div class="form-inline, justify-content-center">										
+										<form th:action="@{doDeleteBlog/{id} (id=${blog.id})}" th:object="${blog}" method="POST">
+											<input class="btn btn-sm btn-danger my-1" style="width: 150px;"
+												type="submit" value="Delete">
+										</form>
+									</div>
+								</div>
+							</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
