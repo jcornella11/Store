@@ -11,19 +11,19 @@
 							<div class="card h-100 border-primary" style="width: 100%;">
 								<div class="card-body text-dark">
 									<h5 class="card-title">
-										<h5 th:text="${blog.authorName}"></h5>
+										<h5 th:text="${blog.name}"></h5>
 									</h5>
 									<p class="card-text" style="text-align: left;">
-										<th:block th:text="${blog.title}" />
+										<th:block th:text="${blog.description}" />
 									</p>
 									<p class="card-text" style="text-align: left;">
-										<th:block th:text="${blog.introduction}" />
+										<th:block th:text="${blog.sku}" />
 									</p>
 									<p class="card-text" style="text-align: left;">
-										<th:block th:text="${blog.body}" />
+										<th:block th:text="${blog.quantity}" />
 									</p>
 									<p class="card-text" style="text-align: left;">
-										<th:block th:text="${blog.conclusion}" />
+										<th:block th:text="${blog.price}" />
 									</p>
 								</div>
 								<div class="card-footer text-center border-dark">

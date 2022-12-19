@@ -21,7 +21,7 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/blog")
-public class BlogController {
+public class ItemController {
 
     @Autowired
     private ItemBusinessInterface itemService;
@@ -44,7 +44,7 @@ public class BlogController {
 
         List<ItemModel> itemList = itemService.getItem();
 
-        model.addAttribute("title", "Blogs");
+        model.addAttribute("title", "Items");
         model.addAttribute("blogList", itemList);
 
         return "blogs";
@@ -54,7 +54,7 @@ public class BlogController {
     public String addBlogs(Model model)
     {
 
-        model.addAttribute("title", "Add New Blog");
+        model.addAttribute("title", "Add New Item");
         model.addAttribute("blogModel", new ItemModel());
 
         return "createBlog";
@@ -73,21 +73,21 @@ public class BlogController {
         return "displayBlog";
     }
 
-    @PostMapping("/doAddBlog")
-    public String doAddBlog(@Valid ItemModel blogModel, BindingResult bindingResult, Model model)
+    @PostMapping("/doAddItem")
+    public String doAddItem(@Valid ItemModel itemModel, BindingResult bindingResult, Model model)
     {
         // Check form data for errors
         if (bindingResult.hasErrors()) {
-            model.addAttribute("title", "Add Blog Form");
+            model.addAttribute("title", "Add Item Form");
             return "createBlog";
         }
 
-        itemService.addItem(blogModel);
+        itemService.addItem(itemModel);
 
-        List<ItemModel> blogList = itemService.getItem();
+        List<ItemModel> itemList = itemService.getItem();
 
-        model.addAttribute("title", "Blog");
-        model.addAttribute("blogList", blogList);
+        model.addAttribute("title", "Item");
+        model.addAttribute("itemList", itemList);
 
         return "blogs";
     }

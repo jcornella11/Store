@@ -17,22 +17,22 @@
                 <!-- Insert th:field for Author Name -->
                 <div class="form-row my-2">
                     <div class="col">
-                        <input th:class="form-control" th:field="*{authorName}" type="text" placeholder="Author Name"
+                        <input th:class="form-control" th:field="*{name}" type="text" placeholder="Item Name"
                                required>
                     </div>
                 </div>
 
                 <div class="form-row my-3">
                     <div class="col">
-                        <h6 style="color: red; text-align:left" th:if="${#fields.hasErrors('authorName')}"
-                            th:errors="*{authorName}" />
+                        <h6 style="color: red; text-align:left" th:if="${#fields.hasErrors('name')}"
+                            th:errors="*{name}" />
                     </div>
                 </div>
 
                 <!-- Insert th:field for Title -->
                 <div class="form-row my-3">
                     <div class="col">
-                        <input class="form-control" th:field="*{title}" type="text" placeholder="Title"
+                        <input class="form-control" th:field="*{description}" type="text" placeholder="Description"
                                required>
                     </div>
                 </div>

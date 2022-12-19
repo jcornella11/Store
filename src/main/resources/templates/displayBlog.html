@@ -13,34 +13,34 @@
 							value="<= Go Back">
 						</form>
 					</div>
-					<h3 class="text-center my-5" th:text="${blogModel.authorName}">Author Name</h3>
+					<h3 class="text-center my-5" th:text="${blogModel.name}">Item Name</h3>
 					
 
 					<div class="form-row my-3">
 						<div class="col">
 							<h6>Blog Title:</h6>
-							<h5 th:text="${blogModel.title}"></h5>
+							<h5 th:text="${blogModel.description}"></h5>
 						</div>
 					</div>
 
 					<div class="form-row my-3">
 						<div class="col">
 							<h6>Introduction:</h6>
-							<p th:text="${blogModel.introduction}"></p>
+							<p th:text="${blogModel.sku}"></p>
 						</div>
 					</div>
 
 					<div class="form-row my-3">
 						<div class="col">
 							<h5>Body:</h5>
-							<p th:text="${blogModel.body}"></p>
+							<p th:text="${blogModel.quantity}"></p>
 						</div>
 					</div>
 
 					<div class="form-row my-3">
 						<div class="col">
 							<h6>Concluision: </h6>
-							<p th:text="${blogModel.conclusion}"></p>
+							<p th:text="${blogModel.price}"></p>
 						</div>
 					</div>
 
