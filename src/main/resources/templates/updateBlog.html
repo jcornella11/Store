@@ -17,22 +17,22 @@
 						<!-- Insert th:field for Author Name -->
 						<div class="form-row my-2">
 							<div class="col">
-								<input th:class="form-control" th:field="*{authorName}" type="text" placeholder="Author Name"
+								<input th:class="form-control" th:field="*{name}" type="text" placeholder="Item Name"
 									   required>
 							</div>
 						</div>
 
 						<div class="form-row my-3">
 							<div class="col">
-								<h6 style="color: red; text-align:left" th:if="${#fields.hasErrors('authorName')}"
-									th:errors="*{authorName}" />
+								<h6 style="color: red; text-align:left" th:if="${#fields.hasErrors('name')}"
+									th:errors="*{name}" />
 							</div>
 						</div>
 
 						<!-- Insert th:field for Title -->
 						<div class="form-row my-3">
 							<div class="col">
-								<input class="form-control" th:field="*{title}" type="text" placeholder="Title"
+								<input class="form-control" th:field="*{description}" type="text" placeholder="Item Description"
 									   required>
 							</div>
 						</div>
@@ -40,31 +40,31 @@
 
 						<div class="form-row my-3">
 							<div class="col">
-								<h6 style="color: red; text-align:left" th:if="${#fields.hasErrors('title')}"
-									th:errors="*{title}" />
+								<h6 style="color: red; text-align:left" th:if="${#fields.hasErrors('description')}"
+									th:errors="*{description}" />
 							</div>
 						</div>
 
 
 						<div class="form-row my-3">
 							<div class="col">
-                        <textarea rows="10" cols="100" class="form-control" th:field="*{introduction}" type="text"
-								  placeholder="Blog Introduction" required></textarea>
+                        <textarea rows="10" cols="100" class="form-control" th:field="*{sku}" type="text"
+								  placeholder="SKU" required></textarea>
 							</div>
 						</div>
 
 
 						<div class="form-row my-3">
 							<div class="col">
-								<h6 style="color: red; text-align:left" th:if="${#fields.hasErrors('introduction')}"
-									th:errors="*{introduction}" />
+								<h6 style="color: red; text-align:left" th:if="${#fields.hasErrors('sku')}"
+									th:errors="*{sku}" />
 							</div>
 						</div>
 
 						<!-- Insert th:field for description -->
 						<div class="form-row my-3">
 							<div class="col">
-							<textarea rows="10" cols="100" class="form-control" th:field="*{body}" type="text" placeholder="Blog Body"
+							<textarea rows="10" cols="100" class="form-control" th:field="*{quantity}" type="text" placeholder="Quantity"
 									  required /></textarea>
 							</div>
 						</div>
@@ -72,15 +72,15 @@
 
 						<div class="form-row my-3">
 							<div class="col">
-								<h6 style="color: red; text-align:left" th:if="${#fields.hasErrors('body')}"
-									th:errors="*{body}" />
+								<h6 style="color: red; text-align:left" th:if="${#fields.hasErrors('quantity')}"
+									th:errors="*{quantity}" />
 							</div>
 						</div>
 
 						<!-- Insert th:field for conclusion -->
 						<div class="form-row my-3">
 							<div class="col">
-							<textarea rows="10" cols="100" class="form-control" th:field="*{conclusion}" th:type="text" placeholder="Blog Conclusion"
+							<textarea rows="10" cols="100" class="form-control" th:field="*{price}" th:type="text" placeholder="Item Price"
 									  required /></textarea>
 							</div>
 						</div>
@@ -88,8 +88,8 @@
 						<!-- Insert th:if and th:error for description error catching if required -->
 						<div class="form-row my-3">
 							<div class="col">
-								<h6 style="color: red; text-align:left" th:if="${#fields.hasErrors('conclusion')}"
-									th:errors="*{conclusion}" />
+								<h6 style="color: red; text-align:left" th:if="${#fields.hasErrors('price')}"
+									th:errors="*{price}" />
 							</div>
 						</div>
 					<input type="hidden" th:field="*{id}">
